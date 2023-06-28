@@ -2,6 +2,8 @@
 
 `Version`: 0.0.1
 
+https://github.com/the-homeless-god/C-OpenGL-template/assets/32175240/a2d39fae-2b0a-45a0-94d3-a3dbd928e2cf
+
 - a few shaders (renders rotated cube with gradient of colors)
 - OpenGL
 - `Conan@1.x`
