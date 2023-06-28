@@ -1,0 +1,5 @@
+*.swp
+*.BAK
+
+/build/
+.DS_Store
