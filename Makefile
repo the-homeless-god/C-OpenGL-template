@@ -20,7 +20,7 @@ clean:
 
 # Start application
 start:
-	cd build/bin && ./app
+	./build/bin/app
 
 # Test
 test:
