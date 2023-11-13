@@ -2,7 +2,7 @@
 
 `Version`: 0.0.1
 
-https://github.com/the-homeless-god/C-OpenGL-template/assets/32175240/a2d39fae-2b0a-45a0-94d3-a3dbd928e2cf
+https://github.com/the-homeless-god/C-OpenGL-template/assets/32175240/3901ceb1-1ae8-4c87-a866-609eb2da9a6d
 
 - a few shaders (renders rotated cube with gradient of colors)
 - OpenGL
