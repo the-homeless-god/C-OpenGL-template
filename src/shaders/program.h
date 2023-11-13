@@ -9,15 +9,12 @@
 
 #include "types.h"
 
-GLuint compile_shader(GLenum shaderType, const char *source);
-GLuint* createShaderProgram();
-GLuint create_program(GLuint vertexShader, GLuint fragmentShader);
-GLFWwindow initGLFW(const char *window_name, int window_width, int window_height);
+GLFWwindow *initializeGLFW(const char *window_name, int window_width, int window_height);
 
-Buffers *initBuffers();
-void cleanup(GLFWwindow *window);
-
-void render(GLFWwindow *window, GLuint shaderProgram, GLint u_windowHeight, GLint VAO);
 void initialize(GLFWwindow **window, const char *window_name, int window_width, int window_height);
 
-int initGLEW();
+int initializeGLEW();
+GLuint linkShaders(GLuint vertexShader, GLuint fragmentShader);
+GLuint compileShader(GLenum shaderType, const char *source);
+void setupBuffers(GLuint *VAO, GLuint *VBO, GLuint *EBO, const float *vertices, const unsigned int *indices);
+void renderLoop(GLFWwindow *window, GLuint shaderProgram, GLuint VAO);

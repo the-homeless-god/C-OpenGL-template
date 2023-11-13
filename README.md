@@ -17,7 +17,6 @@ https://github.com/the-homeless-god/C-OpenGL-template/assets/32175240/a2d39fae-2
 ## Note
 
 - TODO: Fix file uploading of shaders by specific naming. Everything works as expected, excluding the issues with test of asset uploads, seems like I've not ability to verify it on my current system.
-- TODO: Replace `main.old.c` with `main.c` 'cos currently we have `main.c` file that everything works, while in `main.old.c` there's good definition, but when I've debugged, I spent a lot of hours to understand what wrong with file reading, but temporarly it would be still on master to not forget to fix it and rebase commits when it would be fixed.
 - TODO: add guide how to add new tests
 - TODO: add GitHub Actions for each deployment state
 - TODO: add build to WASM (as fast option to test at GitHub Pages)

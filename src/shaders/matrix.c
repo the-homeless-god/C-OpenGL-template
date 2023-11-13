@@ -37,40 +37,6 @@ void translate(Mat4 *matrix, float x, float y, float z)
   matrix->data[14] = z;
 }
 
-void rotateX(Mat4 *matrix, float angle)
-{
-
-  float cosVal = cosf(angle);
-  float sinVal = sinf(angle);
-  matrix->data[5] = cosVal;
-  matrix->data[6] = -sinVal;
-  matrix->data[9] = sinVal;
-  matrix->data[10] = cosVal;
-}
-
-void rotateY(Mat4 *matrix, float angle)
-{
-
-  float cosVal = cosf(angle);
-  float sinVal = sinf(angle);
-  matrix->data[0] = cosVal;
-  matrix->data[2] = sinVal;
-  matrix->data[8] = -sinVal;
-  matrix->data[10] = cosVal;
-}
-
-void rotateZ(Mat4 *matrix, float angle)
-{
-
-  float cosVal = cosf(angle);
-  float sinVal = sinf(angle);
-
-  matrix->data[0] = cosVal;
-  matrix->data[1] = -sinVal;
-  matrix->data[4] = sinVal;
-  matrix->data[5] = cosVal;
-}
-
 void multiply(const Mat4 *left, const Mat4 *right, Mat4 *result)
 {
   for (int row = 0; row < 4; row++)
@@ -85,6 +51,51 @@ void multiply(const Mat4 *left, const Mat4 *right, Mat4 *result)
       result->data[row * 4 + col] = sum;
     }
   }
+}
+
+void rotateX(Mat4 *matrix, float angle)
+{
+  Mat4 rotationMatrix;
+  identity(&rotationMatrix);
+
+  float cosVal = cosf(angle);
+  float sinVal = sinf(angle);
+  rotationMatrix.data[5] = cosVal;
+  rotationMatrix.data[6] = -sinVal;
+  rotationMatrix.data[9] = sinVal;
+  rotationMatrix.data[10] = cosVal;
+
+  multiply(matrix, &rotationMatrix, matrix);
+}
+
+void rotateY(Mat4 *matrix, float angle)
+{
+  Mat4 rotationMatrix;
+  identity(&rotationMatrix);
+
+  float cosVal = cosf(angle);
+  float sinVal = sinf(angle);
+  rotationMatrix.data[0] = cosVal;
+  rotationMatrix.data[2] = sinVal;
+  rotationMatrix.data[8] = -sinVal;
+  rotationMatrix.data[10] = cosVal;
+
+  multiply(matrix, &rotationMatrix, matrix);
+}
+
+void rotateZ(Mat4 *matrix, float angle)
+{
+  Mat4 rotationMatrix;
+  identity(&rotationMatrix);
+
+  float cosVal = cosf(angle);
+  float sinVal = sinf(angle);
+  rotationMatrix.data[0] = cosVal;
+  rotationMatrix.data[1] = -sinVal;
+  rotationMatrix.data[4] = sinVal;
+  rotationMatrix.data[5] = cosVal;
+
+  multiply(matrix, &rotationMatrix, matrix);
 }
 
 void scale(Mat4 *matrix, float scaleX, float scaleY, float scaleZ)

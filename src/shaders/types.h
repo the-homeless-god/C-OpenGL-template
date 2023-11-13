@@ -5,8 +5,10 @@
 
 typedef struct
 {
-  GLfloat vertices[12];
-  GLuint indices[6];
+  GLfloat vertices[48];
+  GLuint indices[36];
+  char *vertexShaderSource;
+  char *fragmentShaderSource;
 } ShaderConstants;
 
 typedef struct
